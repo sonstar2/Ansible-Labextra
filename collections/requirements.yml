@@ -11,3 +11,5 @@ collections:
   - name: community.general
 
   - name: containers.podman
+
+  - name: community.windows
