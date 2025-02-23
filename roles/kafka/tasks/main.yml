@@ -12,6 +12,8 @@
     port: 9092/tcp
     permanent: true
     state: enabled
+  vars:
+    ansible_python_interpreter: /usr/bin/python
   notify: Restart Firewalld
 
 - name: Open Firewalld for ZooKeeper
@@ -19,6 +21,8 @@
     port: 2181/tcp
     permanent: true
     state: enabled
+  vars:
+    ansible_python_interpreter: /usr/bin/python
   notify: Restart Firewalld
 
 - name: Force all notified handlers to run at this point
