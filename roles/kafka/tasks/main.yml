@@ -7,23 +7,23 @@
       - java
     state: present
 
-- name: Open Firewalld for Kafka
-  ansible.posix.firewalld:
-    port: 9092/tcp
-    permanent: true
-    state: enabled
-  vars:
-    ansible_python_interpreter: /usr/bin/python
-  notify: Restart Firewalld
+# - name: Open Firewalld for Kafka
+#   ansible.posix.firewalld:
+#     port: 9092/tcp
+#     permanent: true
+#     state: enabled
+#   vars:
+#     ansible_python_interpreter: /usr/bin/python
+#   notify: Restart Firewalld
 
-- name: Open Firewalld for ZooKeeper
-  ansible.posix.firewalld:
-    port: 2181/tcp
-    permanent: true
-    state: enabled
-  vars:
-    ansible_python_interpreter: /usr/bin/python
-  notify: Restart Firewalld
+# - name: Open Firewalld for ZooKeeper
+#   ansible.posix.firewalld:
+#     port: 2181/tcp
+#     permanent: true
+#     state: enabled
+#   vars:
+#     ansible_python_interpreter: /usr/bin/python
+#   notify: Restart Firewalld
 
 - name: Force all notified handlers to run at this point
   ansible.builtin.meta: flush_handlers
